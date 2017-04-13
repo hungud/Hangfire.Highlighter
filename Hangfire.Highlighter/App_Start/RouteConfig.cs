@@ -9,6 +9,12 @@ namespace Hangfire.Highlighter
         {
             routes.MapRoute("home", "", new { controller = "Home", action = "Index" });
             routes.MapRoute("create", "create", new { controller = "Home", action = "Create" });
+
+            routes.MapRoute(
+               name: "Default",
+               url: "{controller}/{action}",
+               defaults: new { controller = "Home", action = "Index" }
+           );
         }
     }
 }
